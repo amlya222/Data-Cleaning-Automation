@@ -167,6 +167,23 @@ button:hover:not(:disabled) {
   transform: translateY(-1px);
 }
 
+.status-text {
+  margin: 0;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.status-text.success {
+  color: #a5f3fc;
+}
+
+.status-text.error {
+  color: #fecaca;
+}
+
 .panel {
   padding: 24px;
   border-radius: 24px;
@@ -192,19 +209,76 @@ button:hover:not(:disabled) {
 
 .preview-panel {
   min-height: 260px;
+  min-width: 0;
 }
 
 .preview-area {
   min-height: 240px;
-  overflow: auto;
+  min-width: 0;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
   border-radius: 18px;
   padding: 18px;
   background: rgba(6, 8, 18, 0.65);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.9rem;
   color: #dbeafe;
-  line-height: 1.5;
-  white-space: pre-wrap;
+}
+
+.preview-area table {
+  width: auto;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-family: Inter, system-ui, sans-serif;
+  table-layout: auto;
+  display: inline-table;
+}
+
+.preview-area th,
+.preview-area td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 240px;
+}
+
+.preview-area th,
+.preview-area td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  text-align: left;
+  vertical-align: top;
+}
+
+.preview-area thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(15, 23, 42, 0.94);
+  color: #e2e8f0;
+}
+
+.preview-area tbody tr:hover {
+  background: rgba(56, 189, 248, 0.08);
+}
+
+..preview-area td {
+  color: #cbd5e1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.preview-count {
+  margin-bottom: 12px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.preview-area .no-preview,
+.preview-area .error-preview {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  white-space: normal;
 }
 
 @media (max-width: 840px) {
