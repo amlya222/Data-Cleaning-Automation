@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Cleaning Automation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CleanFlow</p>
+        <h1>Data Cleaning Automation</h1>
+        <p class="hero-copy">Upload your messy dataset and let the app clean it automatically using data analysis rules.</p>
+      </div>
+      <div class="stats-panel">
+        <div class="stat-card">
+          <span class="stat-value" id="recordsProcessed">0</span>
+          <span class="stat-label">Records Processed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="dataAccuracy">0%</span>
+          <span class="stat-label">Data Accuracy</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="anomaliesDetected">0</span>
+          <span class="stat-label">Anomalies Detected</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="cleanTime">0.0s</span>
+          <span class="stat-label">Avg Clean Time</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="upload-panel">
+        <div id="dropZone" class="drop-zone">
+          <div class="drop-icon">⬆️</div>
+          <h2>Upload Your Dataset</h2>
+          <p>Drag and drop your file here, or browse to upload.</p>
+          <p class="hint">Supported: JSON, CSV</p>
+          <input id="fileInput" type="file" accept=".csv,.json" />
+        </div>
+        <div class="actions">
+          <button id="cleanBtn" class="primary" disabled>Clean File</button>
+          <button id="downloadBtn" class="secondary" disabled>Download Cleaned File</button>
+        </div>
+      </section>
+
+      <section class="results-panel">
+        <div class="panel">
+          <h2>Dataset Summary</h2>
+          <div class="summary-grid">
+            <div>
+              <strong>Filename</strong>
+              <p id="fileName">No file uploaded</p>
+            </div>
+            <div>
+              <strong>Rows / Objects</strong>
+              <p id="rowCount">0</p>
+            </div>
+            <div>
+              <strong>Empty values</strong>
+              <p id="emptyCount">0</p>
+            </div>
+            <div>
+              <strong>Duplicates</strong>
+              <p id="duplicateCount">0</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel preview-panel">
+          <h2>Preview</h2>
+          <div id="previewArea" class="preview-area">Upload a file to see the cleaned preview.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
