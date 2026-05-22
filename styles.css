@@ -260,7 +260,7 @@ button:hover:not(:disabled) {
   background: rgba(56, 189, 248, 0.08);
 }
 
-..preview-area td {
+.preview-area td {
   color: #cbd5e1;
   white-space: nowrap;
   overflow: hidden;
